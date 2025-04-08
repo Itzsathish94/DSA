@@ -1,10 +1,10 @@
 //////////Recursive Fibonacci/////////O(2^n)
-    //function recursivefib(n){
+//     function recursiveFib(n){
 //     if(n==0) return 0;
 //     if(n===1) return 1;
-//     return fib(n-1)+fib(n-2)
+//     return recursiveFib(n-1)+recursiveFib(n-2)
 // }
-    // console.log(recursiveFib(6))
+//     console.log(recursiveFib(6))
 
 /////////Recursive Factorial//////O(n)
 // function recursiveFac(n){

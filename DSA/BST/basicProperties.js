@@ -96,7 +96,7 @@ findPath(root,n1,n2){
     if(!LCA) return [];
     const path1 = pathToLCA(LCA,n1);
     const path2 = pathToLCA(LCA,n2);
-    return [...path1,...path2.slice(1).reverse()];
+    return [...path1.reverse(),...path2.slice(1)];
 }
 
 findDistance(root,n1,n2){
