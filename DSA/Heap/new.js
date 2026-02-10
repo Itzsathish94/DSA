@@ -1,7 +1,7 @@
-priority queue 
-heap sort
-find kth largest/smallest
-top k frequent elements 
+// priority queue 
+// heap sort
+// find kth largest/smallest
+// top k frequent elements 
 
 
 topKFrequentElements(nums, k) {

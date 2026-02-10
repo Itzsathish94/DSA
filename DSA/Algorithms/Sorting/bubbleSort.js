@@ -1,20 +1,18 @@
 ///////////////////////////////////////BUBBLE SORT////////////////////////////////////////////////////////////////////////////////////////////////
 
 // function bubbleSort(arr){
-//     let swapped
+//     let swapped;
 //     do{
-//         swapped = false
-//     for(let i = 0;i<arr.length-1;i++){
-//         if(arr[i]>arr[i+1]){
-//            let temp = arr[i+1]
-//             arr[i+1] = arr[i]
-//             arr[i] = temp
-//             swapped = true
+//         swapped = false;
+//         for(let i=0;i<arr.length-1;i++){
+//             if(arr[i]>arr[i+1]){
+//                 [arr[i],arr[i+1]]=[arr[i+1],arr[i]]
+//                 swapped = true;
+//             }
 //         }
 //     }
-// }
-// while(swapped)
-// return arr
+//     while(swapped)
+//     return arr;
 // }
 
 // console.log(bubbleSort([-2,-6,5,1,2,7]))
@@ -111,19 +109,17 @@
 
 /////////////////OPTIMIZED/////////////////////////
 // function bubbleSort(arr){
-//     let swapped
-//     for(let i = 0;i<arr.length-1;i++){
-//         swapped = false
+//     let swapped;
+//     for(let i=0;i<arr.length-1;i++){
+//         swapped = false;
 //         for(let j=0;j<arr.length-1-i;j++){
 //             if(arr[j]>arr[j+1]){
-//                let temp = arr[j+1]
-//                 arr[j+1]=arr[j]
-//                 arr[j]=temp
-//                 swapped = true
+//                 [arr[j],arr[j+1]]=[arr[j+1],arr[j]]
+//                 swapped = true;
 //             }
 //         }
-//         if(!swapped) break
+//         if(!swapped) break;
 //     }
-//     return arr
+//     return arr;
 // }
 // console.log(bubbleSort([1, 2, 3, 4, 5, 6]))

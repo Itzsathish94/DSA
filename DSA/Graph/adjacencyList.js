@@ -75,24 +75,27 @@ class Graph{
         
     }
 
-    dfs(startVertex) {
+    dfs(startVertex){
         const visited = new Set();
         const stack = [startVertex];
-        visited.add(startVertex);
+        visited.add(startVertex)
 
-        while (stack.length > 0) {
+        while(stack.length > 0 ){
             const vertex = stack.pop();
             console.log(vertex);
 
-            this.adjacencyList[vertex].forEach(neighbor => {
-                if (!visited.has(neighbor)) {
+            const neighbors = [...this.adjacencyList[vertex]];
+            for(let i=neighbors.length-1;i>=0;i--){
+                const neighbor = neighbors[i];
+                if(!visited.has(neighbor)){
                     visited.add(neighbor);
-                    stack.push(neighbor);
+                    stack.push(neighbor)
                 }
-            });
+            }
         }
-        
     }
+
+
 
     bfsCycleDetection(startVertex) { ///undirected
         const visited = new Set();
@@ -120,6 +123,29 @@ class Graph{
         }
         if(!cycleDetected) console.log("No cycle detected");
     }
+
+    dfsCycleDetection(startVertex) {
+        const visited = new Set();
+        const stack = [{ vertex: startVertex, parent: null }];
+        visited.add(startVertex);
+    
+        while (stack.length > 0) {
+            const { vertex, parent } = stack.pop();
+    
+            for (const neighbor of this.adjacencyList[vertex]) {
+                if (!visited.has(neighbor)) {
+                    visited.add(neighbor);
+                    stack.push({ vertex: neighbor, parent: vertex });
+                } else if (neighbor !== parent) {
+                    console.log("Cycle detected");
+                    return true;
+                }
+            }
+        }
+    
+        console.log("Cycle not detected");
+        return false;
+    }
         
 
 }
@@ -133,3 +159,5 @@ graph.addEdge("B","C");
 graph.addEdge("C","A");
 graph.display()
 graph.bfsCycleDetection('A')
+graph.dfs("A");
+console.log(graph.adjacencyList);

@@ -3,7 +3,8 @@
 //     if(index<0) return '';
 //     return str[index]+recRev(str,index-1)
 // }
-// console.log(recursiveRev('Hello'))
+// console.log(recRev('Hello'))
+
 
 ////////palindrome///////////////
 // function recursivePalindrome(str,left=0,right=str.length-1){
